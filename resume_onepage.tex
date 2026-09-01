@@ -1,0 +1,111 @@
+% Single-page, ATS/agent-friendly resume. Compile: pdflatex resume_onepage.tex
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+% Heading colour, matched to old_resume.tex
+\definecolor{myblue}{HTML}{3E0097}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\raggedright
+\hypersetup{pdftitle={Saikumar Chintada - Resume},pdfauthor={Saikumar Chintada}}
+
+\renewcommand{\section}[1]{%
+  \par\vspace{5pt}{\color{myblue}\normalsize\bfseries\scshape #1}\normalfont\normalsize%
+  \vspace{2pt}{\color{myblue}\hrule height 0.6pt}\vspace{6pt}}
+
+\newcommand{\role}[3]{\textbf{#1} \textbar{} #2 \hfill #3\\}
+\newenvironment{bullets}{%
+  \begin{list}{\textbullet}{%
+    \setlength{\leftmargin}{12pt}\setlength{\labelwidth}{7pt}\setlength{\labelsep}{5pt}%
+    \setlength{\topsep}{2pt}\setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}%
+    \setlength{\partopsep}{0pt}\setlength{\rightmargin}{0pt}}}{\end{list}}
+
+
+\begin{document}
+
+\begin{center}
+{\color{myblue}\Huge\bfseries SAIKUMAR CHINTADA}\\[5pt]
+{\textbf {Backend \& Data Platform Engineer | Tech Lead | NIT Calicut}}\\[3pt]
+\normalsize
+(+91) 8693858644
+\,\textbullet\,
+\href{mailto:saikumar.chintada.one@gmail.com}{saikumar.chintada.one@gmail.com}
+\textbullet\,
+\href{https://smarchone.substack.com/}{smarchone.substack.com}\\[2pt]
+\href{https://linkedin.com/in/saikumar-chintada-a72671b1}{linkedin.com/in/saikumar-chintada-a72671b1}
+\,\textbullet\,
+\href{https://github.com/smarchone/}{github.com/smarchone}
+\
+\end{center}
+\vspace{-4pt}
+
+\section{Summary}
+Backend and data platform engineer with 8+ years, including 3 as Tech Lead. Builds distributed services and orchestration systems in Golang and Python --- an open-source platform scheduling 5000+ DAGs, 70\% batch compute savings, a zero-downtime TB-scale migration. Depth in event-driven microservices, Postgres, Airflow, Trino, Kubernetes.
+
+\section{Skills}
+\textbf{Languages:} Golang, Python, SQL, JavaScript\\
+\textbf{Data Platform:} Airflow, Trino, Hive, DBT, ETL/Reverse ETL, Semantic Layer\\
+\textbf{Infrastructure:} Kubernetes, Docker, Terraform, AWS, GCP, Hetzner, Git\\
+\textbf{Databases:} Postgres, MongoDB, Redis
+\vspace{2pt}
+
+\section{Experience}
+
+\role{Senior Software Engineer}{Sundial, Bangalore}{Nov 2025 -- Mar 2026}
+\begin{bullets}
+  \item Built an on-demand semantic layer for exploratory analytics over base tables, with a query layer translating metric queries into table queries (Python, Golang, Trino, Kubernetes, Redis).
+  \item Diagnosed and led resolution of a critical concurrency bug in a custom pipeline orchestrator that had caused silent SLA misses for months.
+\end{bullets}
+
+\role{Freelance Consultant}{Early-Stage Startup, Remote}{Jan 2024 -- Oct 2025}
+\begin{bullets}
+  \item Prototyped checkpointing with intent-based speculative scaling, cutting user-facing job latency from 20 minutes to 1 minute.
+  \item Built a cost-efficient k3s-based load testing platform on Hetzner Cloud.
+\end{bullets}
+
+\role{Tech Lead, Data Platform}{Gojek, Bangalore}{Mar 2022 -- Jan 2024}
+\begin{bullets}
+  \item Led development of an open-source job specification and orchestration layer (\href{https://github.com/goto/optimus}{Optimus}) scheduling 5000+ DAGs for BigQuery ingestion, egress and transformation.
+  \item Cut the release cycle from 3 days to 1 hour by simplifying the plugin system and execution model; added YAML-based plugins and deprecated 90\% of legacy plugins.
+  \item Upgraded legacy Airflow clusters, reducing Airflow DB CPU usage by 80\% and lowering scheduling lag.
+  \item Achieved 70\% cost reduction on batch workloads by fixing issues that blocked Kubernetes node pool scale-down.
+\end{bullets}
+
+\role{Tech Lead, Data Platform}{JioSaavn, Bangalore}{Jan 2020 -- Mar 2022}
+\begin{bullets}
+  \item Built a centrally governed Reverse ETL service and migrated 50+ ad-hoc pipelines onto it, enabling non-technical analysts to run push, email and ad campaigns.
+  \item Orchestrated a zero-downtime MongoDB migration (12 shards, 36 nodes, TB-scale) from AWS to Azure; achieved 10x faster shard operations with a custom chunk migration solution.
+  \item Reduced MongoDB cluster size 33\% through selective archiving, deletion and downscaling.
+  \item Led Kubernetes adoption by migrating production VM-based Trino and Airflow clusters to Kubernetes.
+\end{bullets}
+
+\role{Software Engineer}{Coverfox, Mumbai}{May 2018 -- Oct 2019}
+\begin{bullets}
+  \item Migrated a critical finance module from a monolith to an event-driven microservice (Python, Flask, Django, AWS Lambda, Postgres).
+  \item Reduced offline financial accounting from weeks to hours by onboarding offline policy workflows and unifying the commission payout system.
+  \item Built a custom JSON based testing framework for non-technical QA team and led them to contribute to automated testing in critical finance calculations.
+\end{bullets}
+
+\role{Software Engineer}{CouponDunia, Mumbai}{Jul 2016 -- May 2018}
+\begin{bullets}
+  \item Owned a full-stack sub-product and browser extension; improved coupon auto-apply time at checkout from 30s to 2s.
+\end{bullets}
+
+\section{Education}
+\textbf{National Institute of Technology Calicut} \textbar{} B.Tech, Computer Science \textbar{} CGPA 7.65 \hfill 2016
+\vspace{2pt}
+
+\section{Independent R\&D}
+\begin{bullets}
+  \item Apr 2026 -- Present: prototyping meeting-driven development (specs derived from meeting transcripts) and an agentic SDLC workflow using hexagonal architecture grounded in a domain ontology (\href{https://github.com/smarchone/skills}{github.com/smarchone/skills}).
+\end{bullets}
+
+\end{document}
