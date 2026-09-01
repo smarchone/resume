@@ -50,9 +50,9 @@ CGPA: 7.65 (2016)
 - **Skills:** Python, Golang, MongoDB, Kubernetes, Trino, Airflow, AWS, Azure, ETL pipelines
 
 **Software Engineer | Coverfox, Mumbai** — May 2018 – Oct 2019
-- Reduced the development cycle for a critical finance module from 2 weeks to under an hour by extracting it from the monolith into an event-driven microservice, removing it from the monolith's full regression cycle (Python, Flask, AWS Lambda, Postgres)
-- Reduced offline financial accounting from weeks to hours by onboarding offline policy workflows and unifying the commission payout system.
-- Built a custom JSON based testing framework for non-technical QA team and led them to contribute a test suite for critical finance calculations.
+- Accelerated shipping feature in a finance module from 2 weeks to under an hour by extracting it from the monolith into an event-driven microservice (removing it from the monolith's full regression cycle). (Python, Flask, AWS Lambda, Postgres).
+- Reduced offline financial reconciliations from weeks to hours by onboarding offline policy workflows and unifying the commission payout system.
+- Supervised a non-technical 3-person QA team in building a test suite for complex payout calculations by developing a JSON-based testing framework.
 - **Skills:** Python, Flask, Django, AWS Lambda, Postgres
 
 **Software Engineer | CouponDunia, Mumbai** — Jul 2016 – May 2018
