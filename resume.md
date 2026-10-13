@@ -1,60 +1,54 @@
 # SAIKUMAR CHINTADA
 
-Backend & Data Platform Engineer | Tech Lead | NIT Calicut
+**Lead Software Engineer | Backend & Data | NIT Calicut**
 
-[saikumar.chintada.one@gmail.com](mailto:saikumar.chintada.one@gmail.com) · +91 8693858644 · [LinkedIn](https://linkedin.com/in/saikumar-chintada-a72671b1) · [github.com/smarchone](https://github.com/smarchone/) · [smarchone.substack.com](https://smarchone.substack.com/) · [smarchone.github.io](https://smarchone.github.io/)
++91 8693858644 · [saikumar.chintada.one@gmail.com](mailto:saikumar.chintada.one@gmail.com) · [smarchone.substack.com](https://smarchone.substack.com/)
+[linkedin.com/in/saikumar-chintada-a72671b1](https://linkedin.com/in/saikumar-chintada-a72671b1) · [github.com/smarchone](https://github.com/smarchone/) · [smarchone.github.io](https://smarchone.github.io/)
 
-## PROFESSIONAL SUMMARY
+## SUMMARY
 
-Backend and data platform engineer with 8+ years, including 3 as Tech Lead. Builds distributed services and orchestration systems in Golang and Python --- an open-source platform scheduling 5000+ DAGs, 70\% batch compute savings, a zero-downtime TB-scale migration. Depth in event-driven microservices, Postgres, Airflow, Trino, Kubernetes.
-
-## EDUCATION
-
-**National Institute of Technology Calicut, India**
-B.Tech: Computer Science
-CGPA: 7.65 (2016)
+Backend and data platform engineer, 8 years (2+ as Tech Lead), building distributed systems in Golang and Python: an open-source orchestrator scheduling 5000+ DAGs, 70% batch cost savings, a zero-downtime TB-scale migration.
 
 ## SKILLS
-* **Languages:** Golang, Python, JavaScript
-* **Tools:** Git, Docker, AWS, GCP, Hetzner, Terraform, Kubernetes
-* **Data Platform:** Hive, Bigquery, DBT, SQL, ETL, Airflow, Trino, Semantic Layer
-* **Databases:** Postgres, MongoDB
+
+- **Languages:** Golang, Python, SQL, JavaScript
+- **Data Platform:** Airflow, Trino, Hive, dbt, BigQuery, ETL/Reverse ETL, Semantic Layer
+- **Infrastructure:** Kubernetes, Docker, Terraform, AWS, GCP, Azure, Hetzner
+- **Databases:** Postgres, MongoDB, Redis
+- **Practices:** Distributed Systems, Event-Driven Microservices, Workflow Orchestration, Agentic SDLC
 
 ## EXPERIENCE
 
-**Independent R&D** — Apr 2026 – Present
-- Prototyped a multi-role based meeting-driven-development workflow where spec files are derived from the meeting transcript.
-- Experimented with an Agentic SDLC workflow which follows hexagonal architecture grounded in a domain ontology - [repo](https://github.com/smarchone/skills).
+**Independent R&D** | Agentic SDLC | [github.com/smarchone/skills](https://github.com/smarchone/skills) — Apr 2026 – Present
+- Building agentic experiences that improve productivity and accelerate learning.
+- Experimenting with agentic SDLC (ASDLC): a discipline for engineers leading agent teams to 10x throughput.
 
-**Senior Software Engineer | Sundial, Bangalore** — Nov 2025 – Mar 2026 (role eliminated in layoff)
-- Built an on-demand semantic layer for exploratory analytics over base tables, with a query layer translating metric queries into table queries.
-- Diagnosed and led the resolution of a critical concurrency bug in a custom pipeline orchestrator that had caused silent SLA misses for months.
-- **Skills:** Python, Golang, Kubernetes, Trino, Redis
+**Senior Software Engineer** | Sundial, Bangalore — Nov 2025 – Mar 2026
+- Led a semantic layer for exploratory analytics over JSON log tables (Python, Golang, Trino, Kubernetes, Redis).
+- Ended months of silent SLA misses by fixing a major concurrency bug in an in-house data pipeline orchestrator.
 
-**Freelance Consultant | Early-Stage Startup, Remote** — Jan 2024 – Oct 2025
-- Prototyped checkpointing with intent-based speculative scaling, cutting user-facing job latency from 20 minutes to 1 minute.
-- Built a k3s based cost-efficient load testing setup out of Hetzner cloud.
+**Career Break** | Freelance consulting for an early-stage startup, Remote — Jan 2024 – Oct 2025
+- Cut user-facing job latency from 20 min to 1 min via checkpointing and intent-based speculative scaling.
+- Delivered a low-cost k3s-based load-testing cluster on Hetzner Cloud.
 
-**Tech Lead | Data Platform | Gojek, Bangalore** — Mar 2022 – Jan 2024
-- Led the development of an open-source job specification and orchestration layer ([optimus](https://github.com/goto/optimus)) for scheduling 5000+ DAGs (BigQuery ingress/egress and transformations).
-- Cut the release cycle from 3 days to 1 hour by simplifying the plugin system and execution model; added YAML-based plugins and deprecated 90% of legacy plugins.
-- Upgraded legacy Airflow clusters, reducing Airflow DB CPU usage by 80% and lowering scheduling lag.
-- Achieved a 70% cost reduction for batch workloads by fixing issues that blocked Kubernetes node pool scale-down. 
-- **Skills:** Golang, Python, Postgres, Airflow, Kubernetes, Terraform, GCP, ETL pipelines
+**Tech Lead, Data Platform** | Gojek, Bangalore — Mar 2022 – Jan 2024
+- Led 4 engineers on [Optimus](https://github.com/goto/optimus), an open-source orchestrator scheduling 5000+ DAGs for BigQuery ETL.
+- Cut release cycle from 3 days to 1 hour via a simpler plugin model; moved 90% of legacy plugins to YAML.
+- Reduced Airflow DB CPU usage by 80% and scheduling lag by upgrading legacy Airflow clusters.
+- Cut batch workload costs by 70% by unblocking Kubernetes node pool scale-down.
 
-**Tech Lead | Data Platform | JioSaavn, Bangalore** — Jan 2020 – Mar 2022
-- Built a central governed **Reverse ETL service** and migrated 50+ scattered ad-hoc data movement pipelines, enabling non-technical analysts to drive engagement campaigns via push, email, and ads.
-- Orchestrated MongoDB cluster migration (12-shard, 36-node, TB-scale) from AWS to Azure with zero downtime. Achieved 10x faster shard operations by building a custom chunk migration solution.
-- Reduced MongoDB cluster size by 33% by selective archiving, deletion and downscaling.
-- Led Kubernetes adoption by migrating VM-based, production Trino and Airfllow clusters to Kubernetes.
-- **Skills:** Python, Golang, MongoDB, Kubernetes, Trino, Airflow, AWS, Azure, ETL pipelines
+**Tech Lead, Data Platform** | JioSaavn, Bangalore — Jan 2020 – Mar 2022
+- Built a governed Reverse ETL service, migrating 50+ ad-hoc pipelines so analysts self-serve campaigns.
+- Migrated TB-scale MongoDB (12 shards, 36 nodes) AWS to Azure, zero downtime; 10x faster chunk moves.
+- Moved production Trino and Airflow from VMs to Kubernetes; shrank the MongoDB cluster by 33%.
 
-**Software Engineer | Coverfox, Mumbai** — May 2018 – Oct 2019
-- Accelerated shipping feature in a finance module from 2 weeks to under an hour by extracting it from the monolith into an event-driven microservice (removing it from the monolith's full regression cycle). (Python, Flask, AWS Lambda, Postgres).
-- Reduced offline financial reconciliations from weeks to hours by onboarding offline policy workflows and unifying the commission payout system.
-- Supervised a non-technical 3-person QA team in building a test suite for complex payout calculations by developing a JSON-based testing framework.
-- **Skills:** Python, Flask, Django, AWS Lambda, Postgres
+**Software Engineer** | Coverfox, Mumbai — May 2018 – Oct 2019
+- Cut feature delivery from 2 weeks to under an hour by extracting a finance module from the monolith into an event-driven microservice (Python, Flask, AWS Lambda, Postgres).
+- Reduced offline financial reconciliations from weeks to hours by unifying the commission payout system.
 
-**Software Engineer | CouponDunia, Mumbai** — Jul 2016 – May 2018
-- Owned a full-stack sub-product and browser extension; improved coupon auto-apply time at checkout from 30s to 2s.
-- **Skills:** PHP, MySQL, JavaScript, Browser Extension
+**Software Engineer** | CouponDunia, Mumbai — Jul 2016 – May 2018
+- Owned a full-stack sub-product and browser extension; cut coupon auto-apply time at checkout from 30s to 2s.
+
+## EDUCATION
+
+**National Institute of Technology Calicut** | B.Tech, Computer Science | CGPA 7.65 | 2016
