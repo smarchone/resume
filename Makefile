@@ -8,8 +8,8 @@
 
 # Two passes: hyperref needs a second run to settle links and outlines.
 resume_onepage.pdf: resume_onepage.tex
-	pdflatex -interaction=nonstopmode -halt-on-error $<
-	pdflatex -interaction=nonstopmode -halt-on-error $<
+	xelatex -interaction=nonstopmode -halt-on-error $<
+	xelatex -interaction=nonstopmode -halt-on-error $<
 	rm -f resume_onepage.aux resume_onepage.log resume_onepage.out
 
 check: resume_onepage.pdf
