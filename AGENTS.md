@@ -3,12 +3,17 @@
 Single-page LaTeX resume (`resume_onepage.tex`), tuned for ATS parsers, AI screeners and fast human skimming.
 Build with `make` (XeLaTeX, font: Charter, which ships with macOS); `make check` prints the extracted text that ATS/agents see.
 
-`resume_onepage.tex` is the source of truth. `make` builds it straight to `docs/Saikumar_Chintada_Resume.pdf`. GitHub Pages serves `docs/` in three formats: that PDF, `docs/resume.md` and `docs/index.html`. Each file exists once; there are no copies elsewhere.
+`resume_onepage.tex` is the source of truth. Every update to it must update all three published assets:
+1. **PDF:** run `make`. It builds `resume_onepage.pdf` (kept at the repo root because external raw links point to it) and copies it to `docs/Saikumar_Chintada_Resume.pdf` for GitHub Pages.
+2. **Markdown:** edit `docs/resume.md` to match.
+3. **HTML:** edit `docs/index.html` to match, including the JSON-LD block if the headline, contacts or skills changed.
+
+Then check that the visible text of the Markdown and HTML matches `make check` word for word.
 
 ## Can't do
 
 **Page and layout**
-- Don't let the resume exceed one page. After every change, run `make` and confirm `pdfinfo docs/Saikumar_Chintada_Resume.pdf` shows `Pages: 1`.
+- Don't let the resume exceed one page. After every change, run `make` and confirm `pdfinfo resume_onepage.pdf` shows `Pages: 1`.
 - Don't use multi-column layouts, tables, text boxes, images or icon fonts (e.g. fontawesome). They break ATS reading order or extract as junk glyphs.
 - Don't put content in headers/footers or hide text (white text, tiny fonts). That's keyword stuffing and gets flagged.
 - Don't switch the font or build engine without checking the extracted text. Some fonts break ATS matching: Helvetica Neue extracts "Airflow" as "Airﬂow" (ligature glyphs), Inter extracts no text at all, Georgia's old-style digits make metrics hard to scan. After any font change, confirm `make check` has no ﬁ/ﬂ characters and every keyword still matches.
@@ -23,9 +28,10 @@ Build with `make` (XeLaTeX, font: Charter, which ships with macOS); `make check`
 - Don't start two adjacent bullets in the same role with the same verb.
 
 **Published formats**
-- Don't change `resume_onepage.tex` without syncing the other formats: update `docs/resume.md` and `docs/index.html` to match, then run `make`. The visible text of all three must match the PDF word for word.
-- Don't hand-edit `docs/Saikumar_Chintada_Resume.pdf`; it's overwritten by `make`.
-- Don't add copies of the resume outside `docs/`. One file per format.
+- Don't finish a `resume_onepage.tex` change without updating all three assets (PDF via `make`, `docs/resume.md`, `docs/index.html`). Stale copies are worse than none: different readers would see different resumes.
+- Don't hand-edit either PDF; `make` overwrites both.
+- Don't move, rename or stop tracking the root `resume_onepage.pdf`. Someone uses its raw GitHub link.
+- Don't add other copies of the resume. The root `resume_onepage.pdf` is the only exception.
 - Don't delete `docs/.nojekyll`: without it GitHub Pages converts `docs/resume.md` to HTML instead of serving the raw Markdown.
 
 **Working with the user**
