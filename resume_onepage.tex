@@ -15,11 +15,20 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \raggedright
+% Never hyphenate: a split keyword (e.g. "Kuber-netes") would break ATS matching
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
 \hypersetup{pdftitle={Saikumar Chintada - Resume},pdfauthor={Saikumar Chintada}}
 
+% Body text: 10.5pt on 13.5pt leading, for easier reading (class only offers 10/11pt)
+\makeatletter
+\renewcommand\normalsize{\@setfontsize\normalsize{10.5}{13.5}}
+\makeatother
+\normalsize
+
 \renewcommand{\section}[1]{%
-  \par\vspace{5pt}{\color{myblue}\normalsize\bfseries\scshape #1}\normalfont\normalsize%
-  \vspace{2pt}{\color{myblue}\hrule height 0.6pt}\vspace{6pt}}
+  \par\vspace{10pt}{\color{myblue}\normalsize\bfseries\MakeUppercase{#1}}\normalfont\normalsize%
+  \vspace{2pt}{\color{myblue}\hrule height 0.6pt}\vspace{7pt}}
 
 \newcommand{\role}[3]{\textbf{#1} \textbar{} #2 \hfill #3\\}
 \newenvironment{bullets}{%
@@ -43,65 +52,63 @@
 \href{https://linkedin.com/in/saikumar-chintada-a72671b1}{linkedin.com/in/saikumar-chintada-a72671b1}
 \,\textbullet\,
 \href{https://github.com/smarchone/}{github.com/smarchone}
+\,\textbullet\,
+\href{https://smarchone.github.io/}{smarchone.github.io}
 \
 \end{center}
-\vspace{-4pt}
+\vspace{-8pt}
 
 \section{Summary}
-Backend and data platform engineer with 8 years, with 2 years as Tech Lead. Experienced in distributed backend and orchestration systems in Golang and Python --- an open-source platform scheduling 5000+ DAGs, batch compute savings, a zero-downtime TB-scale migration. Depth in event-driven microservices, Postgres, Airflow, Kubernetes and more.
+Backend and data platform engineer, 8 years (2 as Tech Lead), building distributed systems in Golang and Python: an open-source orchestrator scheduling 5000+ DAGs, 70\% batch cost savings, a zero-downtime TB-scale migration.
+\vspace{2pt}
 
 \section{Skills}
 \textbf{Languages:} Golang, Python, SQL, JavaScript\\
-\textbf{Data Platform:} Airflow, Trino, Hive, dbt, ETL/Reverse ETL, Semantic Layer\\
-\textbf{Infrastructure:} Kubernetes, Docker, Terraform, AWS, GCP, Hetzner\\
-\textbf{Databases:} Postgres, MongoDB, Redis
+\textbf{Data Platform:} Airflow, Trino, Hive, dbt, BigQuery, ETL/Reverse ETL, Semantic Layer\\
+\textbf{Infrastructure:} Kubernetes, Docker, Terraform, AWS, GCP, Azure, Hetzner\\
+\textbf{Databases:} Postgres, MongoDB, Redis\\
+\textbf{Practices:} Distributed Systems, Event-Driven Microservices, Workflow Orchestration, Agentic SDLC
 \vspace{2pt}
 
 \section{Experience}
-\role{Independent R\&D}{Self-directed | Agentic SDLC \& Developer Tooling}{Apr 2026 -- Present}
+\role{Independent R\&D}{Agentic Systems \& Agentic SDLC | \href{https://github.com/smarchone/skills}{github.com/smarchone/skills}}{Apr 2026 -- Present}
 \begin{bullets}
-  \item Building an agentic SDLC workflow (\href{github.com/smarchone/skills}{github.com/smarchone/skills}) based on hexagonal architecture grounded in a domain ontology.
-  \item Prototyping meeting-driven development, deriving specs from role-based meeting transcripts.
-\end{bullets}
+  \item Building agentic experiences that improve productivity and accelerate learning.
+  \item Experimenting with agentic SDLC (ASDLC): a discipline for engineers leading agent teams to 10x throughput.
+\end{bullets}\vspace{6pt}
 \role{Senior Software Engineer}{Sundial, Bangalore}{Nov 2025 -- Mar 2026}
 \begin{bullets}
-  \item Led developing a semantic layer for exploratory analytics directly over base tables, with a query layer translating metric queries into table queries (Python, Golang, Trino, Kubernetes, Redis).
-  \item Diagnosed and led resolution of a critical concurrency bug in a custom pipeline orchestrator that had caused silent SLA misses for months.
-\end{bullets}
-
+  \item Led a semantic layer for exploratory analytics over JSON log tables (Python, Golang, Trino, Kubernetes, Redis).
+  \item Ended months of silent SLA misses by fixing a major concurrency bug in an in-house data pipeline orchestrator.
+\end{bullets}\vspace{6pt}
 \role{Freelance Consultant}{Early-Stage Startup, Remote}{Jan 2024 -- Oct 2025}
 \begin{bullets}
-  \item Prototyped checkpointing with intent-based speculative scaling, cutting user-facing job latency from 20 minutes to 1 minute.
-  \item Built a cost-efficient k3s-based load testing cluster on Hetzner Cloud.
-\end{bullets}
-
+  \item Cut user-facing job latency from 20 min to 1 min via checkpointing and intent-based speculative scaling.
+  \item Delivered a low-cost k3s based load-testing cluster on Hetzner Cloud.
+\end{bullets}\vspace{6pt}
 \role{Tech Lead, Data Platform}{Gojek, Bangalore}{Mar 2022 -- Jan 2024}
 \begin{bullets}
-  \item Led a team of 4 engineers developing an open-source job specification and orchestration layer (\href{https://github.com/goto/optimus}{Optimus}) scheduling 5000+ DAGs for BigQuery ingestion, egress and transformation.
-  \item Cut the release cycle from 3 days to 1 hour by simplifying the plugin system and execution model; added YAML-based plugins and deprecated 90\% of legacy plugins.
-  \item Upgraded legacy Airflow clusters, reducing Airflow DB CPU usage by 80\% and lowering scheduling lag.
-  \item Achieved 70\% cost reduction on batch workloads by fixing issues that blocked Kubernetes node pool scale-down.
-\end{bullets}
-
+  \item Led 4 engineers on \href{https://github.com/goto/optimus}{Optimus}, an open-source orchestrator scheduling 5000+ DAGs for BigQuery ETL.
+  \item Cut release cycle from 3 days to 1 hour via a simpler plugin model; moved 90\% of legacy plugins to YAML.
+  \item Reduced Airflow DB CPU usage by 80\% and scheduling lag by upgrading legacy Airflow clusters.
+  \item Cut batch workload costs by 70\% by unblocking Kubernetes node pool scale-down.
+\end{bullets}\vspace{6pt}
 \role{Tech Lead, Data Platform}{JioSaavn, Bangalore}{Jan 2020 -- Mar 2022}
 \begin{bullets}
-  \item Built a centrally governed Reverse ETL service and migrated 50+ ad-hoc pipelines onto it, enabling non-technical analysts to run push, email and ad campaigns.
-  \item Orchestrated a zero-downtime MongoDB migration (12 shards, 36 nodes, TB-scale) from AWS to Azure; achieved 10x faster shard operations with a custom chunk migration solution.
-  \item Reduced MongoDB cluster size by 33\% through selective archiving, deletion and downscaling.
-  \item Drove Kubernetes adoption by migrating production Trino and Airflow clusters off VMs.
-\end{bullets}
-
+  \item Built a governed Reverse ETL service, migrating 50+ ad-hoc pipelines so analysts self-serve campaigns.
+  \item Migrated TB-scale MongoDB (12 shards, 36 nodes) AWS to Azure, zero downtime; 10x faster chunk moves.
+  \item Moved production Trino and Airflow from VMs to Kubernetes; shrank the MongoDB cluster by 33\%.
+\end{bullets}\vspace{6pt}
 \role{Software Engineer}{Coverfox, Mumbai}{May 2018 -- Oct 2019}
 \begin{bullets}
-  \item Accelerated feature delivery in a finance module from 2 weeks to under an hour by extracting it from the monolith into an event-driven microservice, removing it from the monolith's full regression cycle (Python, Flask, AWS Lambda, Postgres)
-  \item Reduced offline financial reconciliations from weeks to hours by onboarding offline policy workflows and unifying the commission payout system.
-  \item Supervised a non-technical 3-person QA team in building a test suite for complex payout calculations by developing a JSON-based testing framework.
-\end{bullets}
-
+  \item Cut feature delivery from 2 weeks to under an hour by extracting a finance module from the monolith into an event-driven microservice (Python, Flask, AWS Lambda, Postgres).
+  \item Reduced offline financial reconciliations from weeks to hours by unifying the commission payout system.
+\end{bullets}\vspace{6pt}
 \role{Software Engineer}{CouponDunia, Mumbai}{Jul 2016 -- May 2018}
 \begin{bullets}
-  \item Owned a full-stack sub-product and browser extension; improved coupon auto-apply time at checkout from 30s to 2s.
+  \item Owned a full-stack sub-product and browser extension; cut coupon auto-apply time at checkout from 30s to 2s.
 \end{bullets}
+
 
 \section{Education}
 \textbf{National Institute of Technology Calicut} \textbar{} B.Tech, Computer Science \textbar{} \textbf{CGPA 7.65} \textbar{} \textbf{2016}
