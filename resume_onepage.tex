@@ -1,9 +1,9 @@
-% Single-page, ATS/agent-friendly resume. Compile: pdflatex resume_onepage.tex
+% Single-page, ATS/agent-friendly resume. Compile: xelatex resume_onepage.tex (or make)
 \documentclass[letterpaper,10pt]{article}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+% Charter (ships with macOS): sturdier strokes than Latin Modern, easier to read on screen
+\usepackage{fontspec}
+\setmainfont{Charter}
 \usepackage[margin=0.5in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{microtype}
@@ -20,14 +20,14 @@
 \exhyphenpenalty=10000
 \hypersetup{pdftitle={Saikumar Chintada - Resume},pdfauthor={Saikumar Chintada}}
 
-% Body text: 10.5pt on 13.5pt leading, for easier reading (class only offers 10/11pt)
+% Body text: 10.75pt on 14pt leading
 \makeatletter
-\renewcommand\normalsize{\@setfontsize\normalsize{10.5}{13.5}}
+\renewcommand\normalsize{\@setfontsize\normalsize{10.75}{14}}
 \makeatother
 \normalsize
 
 \renewcommand{\section}[1]{%
-  \par\vspace{10pt}{\color{myblue}\normalsize\bfseries\MakeUppercase{#1}}\normalfont\normalsize%
+  \par\vspace{10pt}{\color{myblue}\fontsize{11.75}{14.5}\selectfont\bfseries\MakeUppercase{#1}}\normalfont\normalsize%
   \vspace{2pt}{\color{myblue}\hrule height 0.6pt}\vspace{7pt}}
 
 \newcommand{\role}[3]{\textbf{#1} \textbar{} #2 \hfill #3\\}
@@ -59,19 +59,17 @@
 \vspace{-8pt}
 
 \section{Summary}
-Backend and data platform engineer, 8 years (2 as Tech Lead), building distributed systems in Golang and Python: an open-source orchestrator scheduling 5000+ DAGs, 70\% batch cost savings, a zero-downtime TB-scale migration.
-\vspace{2pt}
+Backend and data platform engineer, 8 years (2 as Tech Lead), building distributed systems in Golang and Python: an open-source orchestrator scheduling 5000+ DAGs, 70\% batch cost savings, a zero-downtime TB-scale migration.\par\vspace{2pt}
 
 \section{Skills}
 \textbf{Languages:} Golang, Python, SQL, JavaScript\\
 \textbf{Data Platform:} Airflow, Trino, Hive, dbt, BigQuery, ETL/Reverse ETL, Semantic Layer\\
 \textbf{Infrastructure:} Kubernetes, Docker, Terraform, AWS, GCP, Azure, Hetzner\\
 \textbf{Databases:} Postgres, MongoDB, Redis\\
-\textbf{Practices:} Distributed Systems, Event-Driven Microservices, Workflow Orchestration, Agentic SDLC
-\vspace{2pt}
+\textbf{Practices:} Distributed Systems, Event-Driven Microservices, Workflow Orchestration, Agentic SDLC\par\vspace{2pt}
 
 \section{Experience}
-\role{Independent R\&D}{Agentic Systems \& Agentic SDLC | \href{https://github.com/smarchone/skills}{github.com/smarchone/skills}}{Apr 2026 -- Present}
+\role{Independent R\&D}{Agentic SDLC | \href{https://github.com/smarchone/skills}{github.com/smarchone/skills}}{Apr 2026 -- Present}
 \begin{bullets}
   \item Building agentic experiences that improve productivity and accelerate learning.
   \item Experimenting with agentic SDLC (ASDLC): a discipline for engineers leading agent teams to 10x throughput.
