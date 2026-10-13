@@ -6,7 +6,7 @@
 <title>Saikumar Chintada - Resume</title>
 <meta name="description" content="Saikumar Chintada: Lead Software Engineer, backend and data platform. 8 years building distributed systems in Golang and Python.">
 <meta name="author" content="Saikumar Chintada">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <link rel="alternate" type="application/pdf" href="Saikumar_Chintada_Resume.pdf" title="Resume (PDF)">
 <link rel="alternate" type="text/markdown" href="resume.md" title="Resume (Markdown)">
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -46,17 +46,11 @@
     --muted: #444;
     --bg: #ffffff;
     --rule: #3E0097;
+    color-scheme: light;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --accent: #b79cff;
-      --text: #e8e6ee;
-      --muted: #b8b4c4;
-      --bg: #16141c;
-      --rule: #8a6cf0;
-    }
-  }
+  /* Light is the default; dark applies only when the visitor picks it with the toggle. */
   :root[data-theme="dark"] {
+    color-scheme: dark;
     --accent: #b79cff;
     --text: #e8e6ee;
     --muted: #b8b4c4;
@@ -97,10 +91,6 @@
   .theme-toggle .sun { display: none; }
   :root[data-theme="dark"] .theme-toggle .sun { display: block; }
   :root[data-theme="dark"] .theme-toggle .moon { display: none; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .theme-toggle .sun { display: block; }
-    :root:not([data-theme="light"]) .theme-toggle .moon { display: none; }
-  }
 
   header { text-align: center; margin-bottom: 1.25rem; }
   h1 {
@@ -296,8 +286,7 @@
 <script>
 (function () {
   var root = document.documentElement, btn = document.querySelector(".theme-toggle");
-  var mq = matchMedia("(prefers-color-scheme: dark)");
-  function isDark() { return root.dataset.theme ? root.dataset.theme === "dark" : mq.matches; }
+  function isDark() { return root.dataset.theme === "dark"; }
   function label() { btn.setAttribute("aria-label", isDark() ? "Switch to light theme" : "Switch to dark theme"); }
   btn.hidden = false; label();
   btn.addEventListener("click", function () {
@@ -306,7 +295,6 @@
     try { localStorage.setItem("theme", next); } catch (e) {}
     label();
   });
-  mq.addEventListener("change", label);
 })();
 </script>
 </body>
