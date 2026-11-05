@@ -21,7 +21,7 @@ Backend and data platform engineer, 8 years (2+ as Tech Lead), building distribu
 
 **Independent R&D** | Agentic SDLC | [github.com/smarchone/skills](https://github.com/smarchone/skills) — Apr 2026 – Present
 - Building agentic experiences that improve productivity and accelerate learning.
-- Experimenting with agentic SDLC (ASDLC): a discipline for engineers leading agent teams to 10x throughput.
+- Consulting for an early-stage startup, building its AI platform from scratch.
 
 **Senior Software Engineer** | Sundial, Bangalore — Nov 2025 – Mar 2026
 - Led a semantic layer for exploratory analytics over JSON log tables (Python, Golang, Trino, Kubernetes, Redis).
